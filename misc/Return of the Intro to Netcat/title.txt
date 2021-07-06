@@ -1,0 +1,16 @@
+misc/Return of the Intro to Netcat
+meow
+601 solves / 161 points
+
+hey, netcat seems fun! (with a twist)
+
+nc return-of-the-intro-to-netcat.hsc.tf 1337
+
+root@ubuntu:~# nc return-of-the-intro-to-netcat.hsc.tf 1337
+== proof-of-work: enabled ==
+please solve a pow first
+You can run the solver with:
+    python3 <(curl -sSL https://goo.gle/kctf-pow) solve s.AACF.AAAI6jU+rh1xYc+4l/7olW+z
+===================
+
+Solution? curl: (35) OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to goo.gle:443

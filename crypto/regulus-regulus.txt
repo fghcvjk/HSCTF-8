@@ -1,0 +1,90 @@
+crypto/regulus-regulus
+AC
+81 solves / 466 points
+
+Anhinga anhinga
+
+nc regulus-regulus.hsc.tf 1337
+
+root@ubuntu:~# nc regulus-regulus.hsc.tf 1337
+== proof-of-work: disabled ==
+
+1. Key generation algorithm
+2. Public key
+3. Private key
+4. Decrypt
+: 1
+
+from Crypto.Util.number import *
+import random
+import sympy
+flag = open('flag.txt','rb').read()
+p,q = getPrime(1024),getPrime(1024)
+e = 0x10001
+n = p*q
+m = random.randrange(0,n)
+c = pow(m,e,n)
+d = sympy.mod_inverse(e,(p-1)*(q-1))
+def menu():
+    print()
+    print("1. Key generation algorithm")
+    print("2. Public key")
+    print("3. Private key")
+    print("4. Decrypt")
+    choice = input(": ").strip()
+    if choice=="1":
+        f = open(__file__)
+        print()
+        print(f.read())
+        print()
+        menu()
+    elif choice=="2":
+        print("n = "+str(n))
+        print("e = 65537")
+        menu()
+    elif choice=="3":
+        print("d = "+str(d))
+        menu()
+    elif choice=="4":
+        d_ = int(input("What private key you like to decrypt the message with?\n : "))
+        if d_%((p-1)*(q-1))==d:
+            print("You are not allowed to use that private key.")
+            menu()
+        if (pow(c,d_,n)==m):
+            print("Congrats! Here is your flag:")
+            print(flag)
+            exit()
+        else:
+            print("Sorry, that is incorrect.")
+            menu()
+    else:
+        print("That is not a valid choice.")
+        menu()
+while 1:
+    menu()
+
+
+
+1. Key generation algorithm
+2. Public key
+3. Private key
+4. Decrypt
+: 2
+n = 15142692086459317743593249870895330032538986357141853106733101265124734141066061339596164441430310765159988725448311488766066624792743203252092978053221456654142621549757120353860633220992168792438719743587487528900139219699442844787849863830229235514880179657236444319271151839402323052265701547810877793542564454095569444160982401963164488326792056366622786685807090076296569715477214742872537699181576269275035917458817375586197023084961423803686040299073147628912208253948376714850628126237776519185291576410905522324381526854500724246975828037969413280032604586629893797441501124647403881422561999467088748719863
+e = 65537
+
+1. Key generation algorithm
+2. Public key
+3. Private key
+4. Decrypt
+: 3
+d = 5942750514422900840215731368226008032667084686599759859395080100386166014743108437286011709928553227641102125799633359645135321874198623489690272602176722540619012561755239566981941291849162783489080546944019092166433933971186810014854181572447563016963214989763360359669408506788955077349800018458211038801111246567494483880483151297227365727328327205836748929446482986913845665067819711891266962069114023007887385484934782824284239966357648326454644672886790457438006743449192488119157675705811516085652612805659321179814271784576298156542352625696471924268075013382545291008389986067809965499847164936015591879873
+
+1. Key generation algorithm
+2. Public key
+3. Private key
+4. Decrypt
+: 4
+What private key you like to decrypt the message with?
+ : 1
+Sorry, that is incorrect.

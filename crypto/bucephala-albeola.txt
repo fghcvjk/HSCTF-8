@@ -1,0 +1,26 @@
+crypto/bucephala-albeola
+AC
+27 solves / 490 points
+
+⬛
+
+nc bucephala-albeola.hsc.tf 1337
+
+root@ubuntu:~# nc bucephala-albeola.hsc.tf 1337
+== proof-of-work: disabled ==
+The flag is all lowercase. Wrap the flag in the flag format, flag{.*}
+key: flag
+enc(flag,key): 48 90 57 64 57 56 69 75 38 78 55 56 35 99 55 76 35 66 55 76 35 69 55 64 68 79 55 44 49
+key: 1
+key: a
+enc(flag,key): 68 89 57 77 77 55 69 88 58 77 55 69 55 98 55 89 55 65 55 89 55 68 55 77 88 78 55 57 69
+key: 11
+key: 111
+key: aaa
+enc(flag,key): 68 89 57 77 77 55 69 88 58 77 55 69 55 98 55 89 55 65 55 89 55 68 55 77 88 78 55 57 69
+key: key
+enc(flag,key): 76 68 25 85 56 23 77 67 26 85 34 37 63 77 23 97 34 33 63 68 23 76 34 45 96 57 23 65 48
+key: go
+enc(flag,key): 55 58 44 46 64 24 56 57 45 46 42 38 42 67 42 58 42 34 42 58 42 37 42 46 75 47 42 26 56
+key: test
+enc(flag,key): 58 68 68 67 67 34 80 78 48 56 66 59 45 77 66 79 45 44 66 79 45 47 66 67 78 57 66 47 59
